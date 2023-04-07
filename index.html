@@ -1,0 +1,54 @@
+<script>
+    function playRound( playerChoice, computerChoice){
+        let toR = 0; //Default = empate
+        if(playerChoice > computerChoice ){
+            toR = 1;
+        }else if(playerChoice < computerChoice){
+            toR = -1;
+        }
+        return toR;
+    }
+
+    function computerChoice(){
+        // 0=Piedra | 1=Papel | 2=Tijera
+        let computerChoice = Math.random();
+        if( computerChoice <= 0.33 ){
+            computerChoice = 0;
+        } else if( computerChoice <= 0.66) {
+            computerChoice = 1;
+        } else{
+            computerChoice = 2;
+        }
+        return computerChoice;
+    }
+
+
+    function game(){
+
+        let wins = 0;
+        let tie = 0;
+        let loses = 0;
+        for( let i = 0; i < 5; i++){
+            let playerSelection = parseInt(prompt("Elija piedra(0) papel(1) o tijera(2)"), 10);
+            let compuChoice = computerChoice();
+            let roundResult = playRound(playerSelection, compuChoice);   
+            if( roundResult == 0 ){
+                tie++;
+            }else if( roundResult == 1 ){
+                wins++;
+            }else{
+                loses++;
+            }
+        }
+
+        if( wins == loses ){
+            console.log(`Empate`);
+        }else if( wins > loses ){
+            console.log(`Ganaste, con ${wins} ganadas`);
+        }else{
+            console.log(`Perdiste, con ${loses} perdidas`);
+        }
+    }
+
+    game();
+</script>
