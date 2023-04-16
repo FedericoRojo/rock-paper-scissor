@@ -1,0 +1,28 @@
+.body{
+    display: flex   ;
+}
+
+.container-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: rgb(66, 84, 99);
+}
+
+.resultado{
+    font-size: 20px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.btnClass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10%;
+    background-color: aquamarine;
+}
